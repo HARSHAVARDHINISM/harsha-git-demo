@@ -26,7 +26,13 @@ jobs:
           registry: registry-1.docker.io
           username: ${{secrets.DOCKERHUBUSERNAME}}
           password: ${{secrets.DOCKERHUBPASSWORD}}
-          
+      - name: Docker pull
+        run: docker pull httpd
+      - name: docker tag
+        run: docker tag httpd smharsha13/httpd-repo
+      - name: docker push 
+        run: docker push smharsha13/httpd-repo
+      
   Logintodockerhub2:
     runs-on: ubuntu-latest
     environment: QA
@@ -39,4 +45,6 @@ jobs:
           username: ${{secrets.DOCKERHUBUSERNAME}}
           password: ${{secrets.DOCKERHUBPASSWORD}}
       
+        
+
         
