@@ -23,7 +23,6 @@ jobs:
       - name: docker login
         uses: docker/login-action@v2.1.0
         with:
-          registry: registry-1.docker.io
           username: ${{secrets.DOCKERHUBUSERNAME}}
           password: ${{secrets.DOCKERHUBPASSWORD}}
       - name: Docker pull
@@ -31,7 +30,7 @@ jobs:
       - name: docker tag
         run: docker tag httpd smharsha13/httpd-repo
       - name: docker push 
-        run: docker push httpd
+        run: docker push smharsha13/httpd-repo
       
   Logintodockerhub2:
     runs-on: ubuntu-latest
