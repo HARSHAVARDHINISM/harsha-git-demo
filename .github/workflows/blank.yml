@@ -31,7 +31,7 @@ jobs:
       - name: docker tag
         run: docker tag httpd smharsha13/httpd-repo
       - name: docker push 
-        run: docker push smharsha13/httpd-repo
+        run: docker push httpd
       
   Logintodockerhub2:
     runs-on: ubuntu-latest
